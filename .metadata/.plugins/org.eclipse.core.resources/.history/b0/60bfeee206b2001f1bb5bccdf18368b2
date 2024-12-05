@@ -1,0 +1,218 @@
+package teamtest;
+
+import java.util.Scanner;
+
+public class Te {
+   public static void main(String[] args) {
+      System.out.println("========task01 사칙연산=======");
+      Scanner sc = new Scanner(System.in);
+      TeamTask tt = new TeamTask();
+      
+      final int SIZE = 2;
+      int[] arr = new int[SIZE];
+
+      // 입력받기
+      for (int i = 0; i < SIZE; i++) {
+         System.out.print((i + 1) + "번째 숫자를 입력해주세요(정수형태) : ");
+         arr[i] = sc.nextInt();
+         sc.nextLine(); // void buffer
+      }
+
+      // 더하기
+      System.out.println("더하기 : " + tt.add(arr));
+      // 빼기
+      System.out.println("빼기 : " + tt.subraction(arr));
+      // 곱하기
+      System.out.println("곱하기 : " + tt.multiply(arr));
+      // 나누기
+      if (arr[1] == 0) {
+         System.out.println("0으로 나눌 수 없습니다");
+      } else {
+         System.out.println("나누기 : " + tt.divide(arr));
+      }
+
+      System.out.println("========task02 버스카드=======");
+      int age = 0, money = 0;
+      String ageName = "";
+
+      // 연령대 입력
+      System.out.print("나이를 입력해주세요 : ");
+      age = sc.nextInt();
+      sc.nextLine(); // void buffer
+
+      // 연령대 판별
+      ageName = tt.checkAge(age);
+
+      // 버스카드에 일정 금액 충전
+      System.out.print("충전하실 요금을 입력해주세요 : ");
+      money = sc.nextInt();
+      sc.nextLine(); // void buffer
+
+      // 버스카드 사용
+      tt.takeBus(money, ageName);
+
+      System.out.println("========task03 회원가입=======");
+      String id = "", name = "", pw = "", pwCheck = "";
+
+      System.out.print("아이디를 입력해주세요 : ");
+      id = sc.next();
+      sc.nextLine();// void buffer
+
+      while (true) {
+         //아이디 중복 검사
+         if(tt.idCheck(id)==false) {
+            System.out.println("아이디 중복 오류로 종료합니다.");
+            break;
+         }
+         
+         //닉네임 받기
+         System.out.print("닉네임을 입력해주세요 : ");
+         name = sc.next();
+         sc.nextLine();// void buffer
+         //닉네임 중복검사
+         if(tt.nameCheck(name)==false) {
+            System.out.println("닉네임 중복 오류로 종료합니다.");
+            break;
+         }
+         
+         //비밀번호 받기
+         System.out.print("비밀번호를 입력해주세요 : ");
+         pw = sc.next();
+         sc.nextLine();// void buffer
+         System.out.print("비밀번호를 다시 입력해주세요 : ");
+         pwCheck = sc.next();
+         sc.nextLine();// void buffer
+         //비밀번호 일치 검사
+         if(tt.pwCheck(pw, pwCheck).equals("false")) {
+            System.out.println("비밀번호 불일치 오류로 인해 종료합니다.");
+            break;
+         }
+         System.out.println();
+         System.out.println(""
+               + "☁️🌚🌚🌚🌚☁️🌚☁️☁️☁️🌚☁️☁️🌚🌚🌚☁️☁️☁️🌚🌚🌚☁️☁️🌚🌚🌚🌚🌚☁️☁️🌚🌚🌚🌚☁️☁️🌚🌚🌚🌚☁️🌚🌚🌚🌚🌚☁️🌚☁️☁️☁️🌚☁️☁️🌚☁️☁️☁️\n"
+               + "🌚☁️☁️☁️☁️☁️🌚☁️☁️☁️🌚☁️🌚☁️☁️☁️🌚☁️🌚☁️☁️☁️🌚☁️🌚☁️☁️☁️☁️☁️🌚☁️☁️☁️☁️☁️🌚☁️☁️☁️☁️☁️🌚☁️☁️☁️☁️☁️🌚☁️☁️☁️🌚☁️☁️🌚☁️☁️☁️\n"
+               + "☁️🌚🌚🌚🌚☁️🌚☁️☁️☁️🌚☁️🌚☁️☁️☁️☁️☁️🌚☁️☁️☁️☁️☁️🌚🌚🌚🌚🌚☁️☁️🌚🌚🌚🌚☁️☁️🌚🌚🌚🌚☁️🌚🌚🌚🌚🌚☁️🌚☁️☁️☁️🌚☁️☁️🌚☁️☁️☁️\n"
+               + "☁️☁️☁️☁️🌚☁️🌚☁️☁️☁️🌚☁️🌚☁️☁️☁️🌚☁️🌚☁️☁️☁️🌚☁️🌚☁️☁️☁️☁️☁️☁️☁️☁️☁️🌚☁️☁️☁️☁️☁️🌚☁️🌚☁️☁️☁️☁️☁️🌚☁️☁️☁️🌚☁️☁️🌚☁️☁️☁️\n"
+               + "🌚🌚🌚🌚☁️☁️☁️🌚🌚🌚☁️☁️☁️🌚🌚🌚☁️☁️☁️🌚🌚🌚☁️☁️🌚🌚🌚🌚🌚☁️🌚🌚🌚🌚☁️☁️🌚🌚🌚🌚☁️☁️🌚☁️☁️☁️☁️☁️☁️🌚🌚🌚☁️☁️☁️🌚🌚🌚🌚\n"
+               + "");
+         System.out.println(name + "님 환영합니다, 아이디는 " + id + ", 비밀번호는 " 
+         + "암호화된 {" + tt.pwCheck(pw, pwCheck) + "} 입니다");
+         break;
+      }
+   }
+
+   // 아이디 중복검사 메소드
+   boolean idCheck(String id) {
+      String[] basicId = { "admin01", "admin02", "admin03" };
+      for (String data : basicId) {
+         if (data.equals(id)) {
+            System.out.println("아이디가 중복됩니다.");
+            return false;
+         }
+      }
+      return true;
+   }
+
+   // 닉네임 중복검사 메소드
+   boolean nameCheck(String name) {
+      String[] basicName = { "name01", "name02", "name03" }; // 기존 닉네임
+      for (String data : basicName) {
+         if (data.equals(name)) {
+            System.out.println("닉네임이 중복됩니다");
+            return false; // 닉네임 중복
+         }
+      }
+      return true;
+   }
+
+   // 비밀번호 재확인 메소드
+   String pwCheck(String pw, String pwCheck) {
+//        비밀번호 길이
+      if (pw.length() != pwCheck.length()) {
+         return "false";
+      }
+
+//        //문자 단위 체크
+      for (int i = 0; i < pw.length(); i++) {
+         if (pw.charAt(i) != pwCheck.charAt(i)) {
+            return "false";
+         }
+      }
+
+//        //암호화(아스키코드)
+      String encryptionPw = "";
+      for (int i = 0; i < pw.length(); i++) {
+         encryptionPw += ((int) pw.charAt(i)) + ""; // 자동형변환
+      }
+      return encryptionPw;
+   }
+
+   // 연령대 판별 메소드
+   String checkAge(int age) {
+      if (age > 19) {
+         return "성인";
+      } else if (age > 12) {
+         return "청소년";
+      } else {
+         return "어린이";
+      }
+   }
+
+   // 버스카드 사용 메소드
+   void takeBus(int money, String age) {
+      final int CHILD = 500;
+      final int STUDENT = 800;
+      final int ADULT = 1400;
+      int charge = 0;
+
+      switch (age) {
+      case "어린이":
+         charge = CHILD;
+         break;
+      case "청소년":
+         charge = STUDENT;
+         break;
+      default:
+         charge = ADULT;
+         break;
+      }
+
+      while (true) {
+         if (money - charge > 0) {// 돈이 있으면
+            System.out.println("버스 탑승 완료.");
+            money -= charge;
+            System.out.println("잔액 : " + money);
+            System.out.println();
+         } else {
+            System.out.println("잔액이 부족합니다.");
+            break;// 탈출
+         }
+      }
+   }
+
+   // add method
+   int add(int[] arr) {
+      int result = 0;
+      for (int data : arr) {
+         result += data;
+      }
+      return result;
+   }
+
+   // subraction method
+   int subraction(int[] arr) {
+      int max = arr[0] > arr[1] ? arr[0] : arr[1];
+      int min = arr[0] > arr[1] ? arr[1] : arr[0];
+      return max - min;
+   }
+
+   // multiply method
+   int multiply(int[] arr) {
+      return arr[0] * arr[1];
+   }
+
+   // divide method
+   double divide(int[] arr) {
+      return (double) arr[0] / arr[1];
+   }
+}

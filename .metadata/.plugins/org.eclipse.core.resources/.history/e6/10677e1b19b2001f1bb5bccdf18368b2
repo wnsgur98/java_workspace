@@ -1,0 +1,23 @@
+package section08;
+
+public class Ex08_01 {
+	public static void main(String[] args) {
+	//08-1 예제	
+		printHello();// main 메서드 안에서 printHello()메서드 호출
+		
+		
+	//08-3 예제
+		Ex08_01 jogger =new Ex08_01();
+		jogger.run();
+}
+	
+	//08-1예제
+	static void printHello() {// static 키워드를 통해서 바로 호출
+		System.out.println("안녕하세요");
+		System.out.println("만나서 반갑습니다");
+	}
+	//08-2 예제
+	void run() {//리턴 값 없는 메서드
+		System.out.println("run run run!");
+	}
+}
