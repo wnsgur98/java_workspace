@@ -10,25 +10,21 @@ public class Task01 {
 //	      1. 한개의 정수를 입력받아 짝수인지 홀수인지 출력하기
 //	      입력 : 8
 //	      출력 : 짝수입니다
-	//
-		Scanner sc= new Scanner(System.in);//입력 클래스
-		int num = 0;
-		System.out.println("숫자를 입력하세요 : ");//출력 메소드
-		num = sc.nextInt();//변수 저장
-//		String result =(String))num %2==0;
-		
-		}
+			Scanner sc = new Scanner(System.in);
+			
+			
 		
 		
 //	      2. 한개의 정수를 입력받아 양수, 음수, 0인지 출력하기
 //	      입력 : -5
 //	      출력 : 음수입니다
 	//
-		int num1 =0;
-		
-//	      입력 : 100
-//	      출력 : 양수입니다
-	//
+//		int num =0;
+//		System.out.println("음수입니다");
+//		num = sc.nextInt();
+////	      입력 : 100
+////	      출력 : 양수입니다
+//		int num = 0;
 //	      입력 : 0
 //	      출력 : 0입니다
 	//
@@ -71,6 +67,6 @@ public class Task01 {
 //	                  + "선택 : ");
 
 
-
+	}
 }
 
