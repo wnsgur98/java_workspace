@@ -21,6 +21,7 @@ public class HashsetTest03 {
 		
 		HashSet<Integer> set = new HashSet<>(li);
 		System.out.println(set);
-		
+		ArrayList<Integer> result = new ArrayList<>(set);
+		System.out.println(result);
 }
 }
